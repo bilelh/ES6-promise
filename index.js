@@ -18,23 +18,6 @@ fs.pathExists('./temp')
                     "lastName": "Hodicq",
                     "mail": "nhodicq@bewizyu.com"
                 },
-                "openDays": [
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday"
-                ],
-                "openHours": {
-                    "start": 10,
-                    "end": 1
-                },
-                "beers": [
-                    {
-                        "type": "Blonde",
-                        "name": "Triple Karmeliet"
-                    }
-                ]
             }
         ]))
     .then(() => {return fs.watchFile('./temp/pubs.json' , (curr, prev) => {
@@ -46,4 +29,3 @@ fs.pathExists('./temp')
 
 
 
-      
