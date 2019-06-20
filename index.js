@@ -1,11 +1,10 @@
-const fs = require('fs-extra')
+const fs = require('fs-extra');
 
-//const maPromise = new Promise()
 
 fs.pathExists('./temp') 
     .then(exists => { 
         if(exists) {
-            return fs.remove('./temp'); 
+            return fs.remove('/temp'); 
         }
         return;
     })
@@ -38,3 +37,13 @@ fs.pathExists('./temp')
                 ]
             }
         ]))
+    .then(() => {return fs.watchFile('./temp/pubs.json' , (curr, prev) => {
+        console.log('pubs.json file modified');
+        console.log(`the current mtime is: ${curr.mtime}`);
+        console.log(`the previous mtime was: ${prev.mtime}`);
+      })});
+
+
+
+
+      
